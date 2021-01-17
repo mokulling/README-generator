@@ -12,19 +12,20 @@ function writeToFile(fileName, data) {
         
         console.log(inputs)
         const filename = `${data.title.toLowerCase().split(' ').join('')}.MD`;
-        fs.writeFile(filename, 
-            '## Description' +'\n\n'+ inputs[1] + '\n\n' + '[GitHub Profile](https://www.github.com/' +  inputs[3]+ ')' + '\n\n' + '## email' +'\n\n'+ inputs[4], (err) => console.log(err)
+        fs.writeFile(filename, '\n\n## Description' +
+        '\n\n'+ inputs[1] + '\n\n# Table of Contents \n\n' + '1. [Description](#Description)\n 2. [Questions](#Questions?) \n\n 3. [Installation](#Installation) \n\n 4. [Usage](#Usage) \n\n 5. [Contributing](#Contributing) \n\n6. [License](#License) \n\n 7. [Tests](#Tests)', (err) =>{
+    if (err) throw (err)        
+        }
+        )
+        fs.appendFile(filename, 
+             '\n\n' + '## Installation\n\n\n' + '## Usage\n\n\n' + '## Contributing\n\n\n'+
+            '## Questions?\n\n\n' +
+             'Contact me here:\n\n' + 
+             '[GitHub Profile](https://www.github.com/' + inputs[3] + ')' + 
+            '\n\n[Email](mailto:'+inputs[4] +')', 
+             (err) => console.log(err))
             
-            )
-       /* for (let i = 0; i < inputs.length; i++) {
-            const currentInput = inputs[i];
-            fs.appendFile(filename, currentInput + '\n', (err) =>
-            err? console.log(err) : console.log(currentInput)
             
-            
-            )
-            
-        }*/
 
 
       };
