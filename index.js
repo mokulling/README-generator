@@ -8,7 +8,14 @@ const questions = ['what is the title of your project?', 'What is the descriptio
 
 // function to write README file
 function writeToFile(fileName, data) {
-}
+    
+        const filename = `${data.title.toLowerCase().split(' ').join('')}.MD`;
+    
+        fs.appendFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+          err ? console.log(err) : console.log('Success!')
+        );
+      };
+
 
 // function to initialize program
 function init() {
@@ -21,35 +28,33 @@ function init() {
         } ,
         {
         type: 'input',
-        message:questions[1],
+        message: questions[1],
         name: 'description'
         } ,
         {
-            type: 'choices',
-            message: questions[2],
-            choices: ['Academic', 'CC', 'MIT', 'GNU'],
-            name: 'license'
+        type: 'list',
+        message: questions[2],
+        choices: ['Academic', 'CC', 'MIT', 'GNU'],
+        name: 'license'
             } ,
 
         {
-                type: 'input',
-                message:questions[3],
-                name: 'github'
+            type: 'input',
+            message:questions[3],
+            name: 'github'
         } ,  
-                {
-                    type: 'input',
-                    message:questions[4],
-                    name: 'email'
-                    } ,  
+        {
+        type: 'input',
+        message:questions[4],
+        name: 'email'
+        } ,  
     
 
 
-    ]).then((response) =>
-        console.log(response)
-    );
+    ])
+    .then((data) => {
+    writeToFile(`${data.title.toLowerCase().split(' ').join('')}.MD`, data)
 
-
-}
-
-// function call to initialize program
-init();
+    })}
+    // function call to initialize program
+init()
