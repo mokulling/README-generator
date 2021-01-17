@@ -12,7 +12,11 @@ function writeToFile(fileName, data) {
         
         console.log(inputs)
         const filename = `${data.title.toLowerCase().split(' ').join('')}.MD`;
-        for (let i = 0; i < inputs.length; i++) {
+        fs.writeFile(filename, 
+            '## Description' +'\n\n'+ inputs[1] + '\n\n' + '[GitHub Profile](https://www.github.com/' +  inputs[3]+ ')' + '\n\n' + '## email' +'\n\n'+ inputs[4], (err) => console.log(err)
+            
+            )
+       /* for (let i = 0; i < inputs.length; i++) {
             const currentInput = inputs[i];
             fs.appendFile(filename, currentInput + '\n', (err) =>
             err? console.log(err) : console.log(currentInput)
@@ -20,7 +24,7 @@ function writeToFile(fileName, data) {
             
             )
             
-        }
+        }*/
 
 
       };
