@@ -8,12 +8,21 @@ const questions = ['what is the title of your project?', 'What is the descriptio
 
 // function to write README file
 function writeToFile(fileName, data) {
-    
+        const inputs = [`${data.title}`, `${data.description}`, `${data.license}`, `${data.github}`, `${data.email}`]
+        
+        console.log(inputs)
         const filename = `${data.title.toLowerCase().split(' ').join('')}.MD`;
-    
-        fs.appendFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-          err ? console.log(err) : console.log('Success!')
-        );
+        for (let i = 0; i < inputs.length; i++) {
+            const currentInput = inputs[i];
+            fs.appendFile(filename, currentInput + '\n', (err) =>
+            err? console.log(err) : console.log(currentInput)
+            
+            
+            )
+            
+        }
+
+
       };
 
 
