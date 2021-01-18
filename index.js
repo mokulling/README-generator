@@ -27,7 +27,7 @@ function writeToFile(fileName, data, badgeLink) {
             '## Questions?\n\n\n' +
              'Contact me here:\n\n' + 
              '[GitHub Profile](https://www.github.com/' + inputs[3] + ')' + 
-            '\n\n[Email](mailto:'+inputs[4] +')' + '\n\n Reach out to me at either of the links above if you have any questions regarding the project or if you want to become a collaborator.', 
+            '\n\n[Email](mailto:'+inputs[4] +')' + '\n\n Reach out to me at either of the links above if you have any questions regarding the project or if you want to become a collaborator.\n\n' + '## License\n' + inputs[2] + '\n\n## Tests', 
              (err) => console.log(err))
              
       };
