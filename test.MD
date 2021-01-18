@@ -33,6 +33,8 @@ sd;afjkl
 
 Contact me here:
 
-[GitHub Profile](https://www.github.com/mokulling)
+[GitHub Profile](https://www.github.com/sd;afjkl)
 
-[Email](mailto:mokulling@gmail.com)
+[Email](mailto:;sdfjkla)
+
+ Reach out to me at either of the links above if you have any questions regarding the project or if you want to become a collaborator.
